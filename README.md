@@ -1,4 +1,6 @@
 ﻿
+專案根目錄:https://github.com/NALoacl/All-Exercises
+
 圓圈亂數顏色&新增刪除圓圈:https://naloacl.github.io/All-Exercises/20190529/index.html
 
 三色方塊&jQuery:https://naloacl.github.io/All-Exercises/20190605/index.html
