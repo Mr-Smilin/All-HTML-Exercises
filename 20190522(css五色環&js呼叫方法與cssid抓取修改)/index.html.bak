@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<style>
+#outer{
+	width:800px;
+	height:600px;
+	margin:0px auto;
+}
+#c1{
+	border-color:blue;
+	position:relative;
+	top:100px;
+	left:50px;
+}
+#c2{
+	border-color:black;
+	position:relative;
+	top:-100px;
+	left:260px;
+}
+#c3{
+	border-color:red;
+	position:relative;
+	top:-300px;
+	left:470px;
+}
+#c4{
+	border-color:yellow;
+	position:relative;
+	top:-325px;
+	left:150px;
+}
+#c5{
+	border-color:green;
+	position:relative;
+	top:-525px;
+	left:360px;
+}
+
+
+.c{
+	border:3px solid;
+	border-radius:100px;
+	width:200px;
+	height:100px;
+	font-size:80px;
+	text-align:center;
+	padding:50px 0;
+}
+.c:hover{
+	background-color:wheat;
+}
+#circle2:hover{
+	background-color:black;
+}
+#circle3:hover{
+	background-color:red;
+}
+#circle4:hover{
+	background-color:yellow;
+}
+#circle5:hover{
+	background-color:green;
+}
+.btnsty{
+	width:724px;
+	height:100px;
+	margin:0px auto;
+}
+.btn{
+	width:100px;
+	height:100px;
+	margin:0px auto;
+}
+</style>
+</HEAD>
+
+<BODY bgcolor='lightblue'>
+<div id=outer>
+<div>
+<div id=c1 class=c onclick=flashcolor("c1","blue")>1</div>
+<div id=c2 class=c onclick=flashcolor("c2","black")>2</div>
+<div id=c3 class=c onclick=flashcolor("c3","red")>3</div>
+</div>
+<div>
+<div id=c4 class=c onclick=flashcolor("c4","yellow")>4</div>
+<div id=c5 class=c onclick=flashcolor("c5","green")>5</div>
+</div>
+</div>
+<div class='btnsty'>
+<button class='btn' onclick=flashcolor("c1","blue")>1</button>
+<button class='btn' onclick=flashcolor("c2","black")>2</button>
+<button class='btn' onclick=flashcolor("c3","red")>3</button>
+<button class='btn' onclick=flashcolor("c4","yellow")>4</button>
+<button class='btn' onclick=flashcolor("c5","green")>5</button>
+<button class='btn' onclick=randomed()>random</button>
+<button class='btn' onclick=cleared()>claer</button>
+</div>
+<script type="text/javascript">
+
+var idS=['c1','c2','c3','c4','c5'];
+var colorS=['blue','black','red','yellow','green'];
+
+function flashcolor(x,y){
+	var z=document.getElementById(x);
+	if(z.style.backgroundColor == y)
+	{
+		z.style.backgroundColor="";
+		z.style.color="";
+	}
+	else
+	{
+		z.style.backgroundColor=y;
+		z.style.color="white";
+	}
+}
+function cleared(){
+	for(i=0;i<5;i++)
+	{
+		document.getElementsByClassName("c")[i].style.backgroundColor="";
+		document.getElementsByClassName("c")[i].style.color="";
+	}
+}
+
+function randomed(){
+	x=Math.floor(Math.random()*5);
+	cleared();
+	flashcolor(idS[x],colorS[x]);
+}
+
+</script>
+</BODY>
+</HTML>
