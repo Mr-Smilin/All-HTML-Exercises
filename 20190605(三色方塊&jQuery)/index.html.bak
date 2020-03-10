@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<script src="jquery-3.4.1.min.js">
+</script>
+<style>
+.box
+{
+	width:200px;
+	height:100px;
+	border:5px solid;
+	box-sizing:border-box;
+	display:inline-block;
+	text-align:right;
+	font-size:20px;
+	padding:10px 10px 0px 0px;
+	margin:0px 10px 0px 0px;
+	line-height:10px;
+}
+#boxs
+{
+	width:50%;
+	margin:0px auto;
+}
+.color
+{
+	width:200px;
+	display:inline-block;
+	text-align:center;
+	font-size:20px;
+}
+#colors
+{
+	width:50%;
+	margin:0px auto;
+}
+
+.button
+{
+	margin:0 40%;
+	width:50px;
+	height:50px;
+}
+#buttons
+{
+	width:50%;
+	margin:0px auto;
+}
+.buttonbox
+{
+	width:200px;
+	display:inline-block;
+}
+.clear
+{
+	clear:both;
+}
+</style>
+</HEAD>
+
+<BODY>
+
+<div id="boxs">
+	<div class="box">R</div>
+	<div class="box">G</div>
+	<div class="box">B</div>
+</div>
+
+<div id="colors">
+	<div class="color">#</div>
+	<div class="color">#</div>
+	<div class="color">#</div>
+</div>
+
+<div id="buttons">
+	<div class="buttonbox">
+		<button class="button" onclick=ColorChange(0)>R</button>
+	</div>
+	<div class="buttonbox">
+		<button class="button" onclick=ColorChange(1)>G</button>
+	</div>
+	<div class="buttonbox">
+		<button class="button" onclick=ColorChange(2)>B</button>
+	</div>
+	<div class="buttonbox">
+		<button class="button" onclick=ColorChanges()>ALL</button>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	
+	//var as=document.getElementsByClassName("box");
+	var as = $(".box");
+	//var asFont=document.getElementsByClassName("color");
+	var asFont = $(".color");
+
+	function ColorChange(no)
+	{
+		if(as[no].style.backgroundColor=="")
+		{
+			var colorsNo = ["00", "00", "00"];
+			colorsNo[no] = Math.random().toString(16).slice(-2);
+			color='#'+colorsNo[0]+colorsNo[1]+colorsNo[2];
+			asFont[no].innerHTML=color;
+			//$(".color").html(color);
+			//$(".color").text(color);
+			as[no].style.backgroundColor=color;
+			as[no].style.color="FFFFFF";
+		}
+		else
+		{
+			asFont[no].innerHTML="#";
+			as[no].style.backgroundColor="";
+			as[no].style.color="";
+		}
+	}
+
+	function ColorChanges()
+	{
+		ColorChange(0);
+		ColorChange(1);
+		ColorChange(2);
+	}
+	
+</script>
+
+</BODY>
+</HTML>

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<script src="jquery-3.4.1.min.js"></script>
+<style>
+#cubeBox
+{
+	width:800px;
+	height:500px;
+	border:5px solid blue;
+	position:relative;
+	margin:200px auto;
+}
+.circle
+{
+	width:100px;
+	height:100px;
+	//border:5px solid;
+	box-sizing:border-box;
+	border-radius:50%;
+	background-Color:red;
+	
+	position:absolute;
+}
+.cube
+{
+	width:100px;
+	height:100px;
+	//border:5px solid;
+	box-sizing:border-box;
+	background-Color:lightgreen;
+	margin-top:10px;
+	display:none;
+	position:relative;
+}
+</style>
+</HEAD>
+
+<BODY>
+<div id="cubeBox">
+<div class="circle"></div>
+<div class="cube"></div>
+<div class="cube"></div>
+</div>
+
+<script>
+
+$(".cube").click(function(){
+	var obj=$(this);
+	obj.css("display","none");
+	setTimeout(function(){
+	obj.css("display","block");
+	},1000)
+})
+
+$(".circle").click(function(){
+	var obj=$(this);
+	var w=Math.floor(Math.random()*101+20)
+
+	var cColor='#'+Math.random().toString(16).slice(-6);
+	var Ttime=Math.floor(Math.random()*1000+200)
+	//obj.css("display","none");
+	obj.css("backgroundColor",cColor);
+	/*
+	obj.css("width",w);
+	obj.css("height",w);
+	obj.css("top",Math.floor(Math.random()*(500-w)));
+	obj.css("left",Math.floor(Math.random()*(800-w)));
+	*/
+	obj.animate({
+	width:w,
+	height:w,
+	top:Math.floor(Math.random()*(500-w)),
+	left:Math.floor(Math.random()*(800-w))
+	},Ttime)
+	
+
+	/*setTimeout(function(){
+		obj.css("display","block");
+	},1000)*/
+	//AddCircle();
+})
+
+window.onload = function ()
+{
+	var obj=$(".circle");
+	var cColor='#'+Math.random().toString(16).slice(-6);
+	var Ttime=Math.floor(Math.random()*2000)
+	obj.css("backgroundColor",cColor);
+	obj.css("top",Math.floor(Math.random()*400));
+	obj.css("left",Math.floor(Math.random()*700));
+}
+
+function AddCircle(){
+	 var newNode=document.createElement("div");
+	 newNode.setAttribute("class","circle"); 
+     document.getElementById("cubeBox").insertBefore(newNode,document.getElementsByClassName("circle")[document.getElementsByClassName("circle").length]);   
+}
+
+</script>
+</BODY>
+</HTML>
