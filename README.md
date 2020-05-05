@@ -14,6 +14,6 @@
 ↑↑↑本地要有範例檔system.xlsx
 https://github.com/NALocal/All-HTML-Exercises/blob/master/20200310/system.xlsx
 
-nodejs留言板:https://NALocal.github.io/All-HTML-Exercises/20200505/index.html
+nodejs留言板:https://github.com/NALocal/All-HTML-Exercises/tree/master/20200505
 
 
